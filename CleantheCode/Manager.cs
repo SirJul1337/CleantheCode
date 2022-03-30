@@ -63,7 +63,7 @@ namespace CleantheCode
             output += ("\n---------------------------------------------------");
             return output;
         }
-        public string hovedLager()
+        public string MainMemory()
         {
             string output = "";
             ObjectQuery wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
@@ -84,7 +84,7 @@ namespace CleantheCode
 
 
 
-        public string test()
+        public string Test()
         {
             string output = "";
             ObjectQuery wql = new ObjectQuery("SELECT * FROM Win32_OperatingSystem");
@@ -102,7 +102,7 @@ namespace CleantheCode
             return output;
         }
 
-        public string testhest()
+        public string BootDevice()
         {
             string output = "";
             ManagementScope scope = new ManagementScope("\\\\.\\ROOT\\cimv2");
@@ -121,21 +121,21 @@ namespace CleantheCode
             foreach (ManagementObject m in queryCollection)
             {
                 // access properties of the WMI object
-                output+=("\nBootDevice : {0}", m["BootDevice"]);
+                output+=("\nBootDevice : ", m["BootDevice"]);
 
             }
             output += ("\n---------------------------------------------------");
-            return (output+"\ntesthest slut");
+            return (output);
 
 
         }
-        public string LISTAllServices()
+        public string ListAllServices()
         {
             string output = "";
             ManagementObjectSearcher windowsServicesSearcher = new ManagementObjectSearcher("root\\cimv2", "select * from Win32_Service");
             ManagementObjectCollection objectCollection = windowsServicesSearcher.Get();
 
-            output += ("There are {0} Windows services: ", objectCollection.Count);
+            output += "There are "+objectCollection.Count+"Windows services: " ;
 
             foreach (ManagementObject windowsService in objectCollection)
             {
@@ -144,8 +144,8 @@ namespace CleantheCode
                 {
                     if (serviceProperty.Value != null)
                     {
-                        output+=("\nWindows service property name: {0}", serviceProperty.Name);
-                        output+=("\nWindows service property value: {0}", serviceProperty.Value);
+                        output+=("\nWindows service property name: ", serviceProperty.Name);
+                        output+=("\nWindows service property value: ", serviceProperty.Value);
                     }
                 }
                 output+=("\n---------------------------------------");

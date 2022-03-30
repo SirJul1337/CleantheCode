@@ -18,15 +18,15 @@ namespace WMIApp
             Console.ReadKey();
             Console.WriteLine(manager.Proccessors());
             Console.ReadKey();
-            Console.WriteLine(manager.hovedLager());
+            Console.WriteLine(manager.MainMemory());
             Console.ReadKey();
-            Console.WriteLine(manager.test());
+            Console.WriteLine(manager.Test());
             Console.ReadKey();
-            Console.WriteLine("testhest start");
-            Console.WriteLine(manager.testhest());
+            Console.WriteLine("BootDevice");
+            Console.WriteLine(manager.BootDevice());
             Console.ReadKey();
-            Console.WriteLine("process søgning");
-            Console.WriteLine(manager.LISTAllServices()); 
+            Console.WriteLine("Process Searching");
+            Console.WriteLine(manager.ListAllServices()); 
 
 
 
